@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-
 """
 Python中__init__和__new__的区别
 """
+
 
 class Person():
     """
@@ -22,6 +22,7 @@ class Person():
     方法将以__init__(self[, ...])的方式调用，cls是新的实例，其他的参数和传递给__new__的一样。
     如果__new__返回的不是cls的实例，那么新实例的__init__方法将不会调用。
     """
+
     # def __new__(cls, name, age):
     # def __new__(cls, *args, **kwargs):
     def __new__(cls, name, age):
@@ -43,6 +44,9 @@ class Person():
     的方法。
     """
 
+
 if __name__ == '__main__':
     huangxiang = Person('Huangxiang', 26)
     print(huangxiang)
+    import os
+    print(os)

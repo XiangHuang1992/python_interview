@@ -31,21 +31,51 @@ def fib2(n):
         a, b = b, a + b
     return b
 
-#print(fib2(5))
+print(fib2(5))
+
+# 使用位移操作,该方式效率最高
+def fib3(n):
+    if n <= 2:
+        return n
+    else:
+        return 1<<(n-2)
+print (fib3(5))
+
+def memo(func):
+    cache = {}
+    def wrap(*args):
+        if args not in cache:
+            cache[args] = func(*args)
+        return cache[args]
+    return wrap
+
+@memo
+def fib4(n):
+    if n<2:
+        return 1
+    else:
+        return fib4(n-1) + fib4(n-2)
+
+print(fib4(5))
 
 if __name__ == '__main__':
     from timeit import Timer
-    t1 = Timer("Selution(5)", "from __main__ import Selution")
-    t2 = Timer("fib(5)", "from __main__ import fib")
-    t3 = Timer("fib2(5)", "from __main__ import fib2")
+    t1 = Timer("Selution(10)", "from __main__ import Selution")
+    t2 = Timer("fib(10)", "from __main__ import fib")
+    t3 = Timer("fib2(10)", "from __main__ import fib2")
+    t4 = Timer("fib3(10)", "from __main__ import fib3")
+    t5 = Timer("fib4(10)", "from __main__ import fib4")
 
     print(t1.timeit(1000000)) 
     print(t2.timeit(1000000)) 
     print(t3.timeit(1000000))
-
+    print(t4.timeit(1000000))
+    print(t5.timeit(1000000))
     """时间效率测试结果如下
     在n为10的情况下
-    1.7005378971807659
-    1.4928366038948298
-    0.7475004158914089
+    20.047603069106117
+    18.299409351078793
+    0.9879354480654001
+    0.2027504441794008
+    0.26944803493097425
     """

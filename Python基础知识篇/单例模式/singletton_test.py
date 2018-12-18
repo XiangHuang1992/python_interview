@@ -11,29 +11,33 @@ Python的模块就是天然的单例模式，因为模块在第一次导入时�
 而不会再执行模块代码。我们只需要把相关的函数和数据定义在一个模块中，就可以获得一个单例对象了。
 """
 
+
 # mysingleton.py
 class My_Singleton():
     def foo(self):
         pass
 
+
 my_sigleton = My_Singleton()
 
 # 在其他模块中调用
-#from mysingleton import my_sigleton
-#my_sigleton.foo()
+# from mysingleton import my_sigleton
+# my_sigleton.foo()
 
 
-#**********************************************************************************************
+# **********************************************************************************************
 
 # 使用__new__
 # 为了使类只能出现一个实例，我们可以使用__new__来控制实例的创建过程
 
 class Singleton():
     _instance = None
+
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
-        rerurn cls._instance
+        return cls._instance
+
 
 class MyClass(Singleton):
     a = 1

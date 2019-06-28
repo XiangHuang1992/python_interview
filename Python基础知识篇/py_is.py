@@ -28,7 +28,7 @@ print(id(a5), id(b5))
 print(a5 is b5)  #True
 print(a5 == b5)  #True
 
-import os
+
 a1 = 5
 b1 = 5
 print(id(a1), id(b1))
@@ -39,6 +39,7 @@ a2 = {'name': 'huang', 'age': 17}
 b2 = {'name': 'huang', 'age': 17}
 print(id(a2), id(b2))
 print(a2 is b2)  # False
+
 print(a2 == b2)  # True
 
 a3 = [1, 2, 3, 4, 5]
@@ -59,7 +60,6 @@ print(id(a5), id(b5))
 print(a5 is b5)  #True
 print(a5 == b5)  #True
 
-import os
 a1 = 5
 b1 = 5
 print(id(a1), id(b1))
@@ -89,4 +89,4 @@ b5 = 'huang'
 print(id(a5), id(b5))
 print(a5 is b5)  # True
 print(a5 == b5)  # True
-print(os)
+

@@ -20,3 +20,4 @@ def binary_search(list, item):
 my_list = [1, 2, 3, 4, 5, 6, 13, 34, 45]
 
 print(binary_search(my_list, 20))
+

@@ -8,15 +8,24 @@
 
 __author__ = "huangxiang"
 
+"""@classmethod和@staticmethod
+python中有三个方法，即classmethod, classmethod和实例方法
+Returns:
+    [type] -- [description]
+"""
+
 
 class A:
+    # 实例方法 self是对类对绑定。为什么需要这个self？？实例方法在调用的时候离不开self，我们需要把实例自己传给函数。
     def foo(self, x):
         print("executing foo(%s, %s)" % (self, x))
 
+    # 类方法 cls是对类实例对绑定
     @classmethod
     def class_foo(cls, x):
         print("executing class_foo(%s, %s)" % (cls, x))
 
+    # 静态方法
     @staticmethod
     def static_foo(x):
         print("executing static_foo(%s)" % x)

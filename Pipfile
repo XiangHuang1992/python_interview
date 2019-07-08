@@ -4,16 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-flake8 = "*"
 
 [packages]
-paho-mqtt = "*"
-redis = "*"
-rope = "*"
-jedi = "*"
+flask = "*"
+black = "*"
 flake8 = "*"
-autopep8 = "*"
-yapf = "*"
+pytest = "*"
 
 [requires]
-python_version = "3.6.4"
+python_version = "3.6"
